@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="clicker.css" media="screen" />
+    <title>Clicker Software Game</title>
+</head>
+<body>
+        <div id="header">Clicker Software Game
+            <div id="optionContainer">
+                <button class="optionButton" id="save">Save</button>
+                <button class="optionButton" id="restart">New Game</button>
+                <button class="optionButton" id="load">Load</button>
+            </div>            
+        </div>
+        <div id="clickerContainer">
+            <button id="clickButton">Code</button>
+            <div class="info">
+                Code Lines
+                <p id="lines">0</p>
+            </div>
+            <div class="info">
+                Money
+                <p id="money">0</p>
+            </div>
+        </div>
+        <div id="powerContainer">  
+                <p id="title">PowerUps</p>
+            <div class="addPowerUp">
+                <button class="buttonPowerUp" id="former" disabled="true">Former </button>
+                    <label class="infoPowerUp" id="infoFormer">Productivity x10</label>
+                    <label class="pricePowerUp" id="priceFormer">1,000$</label>
+                    <label class="counterPowerUp" id="counterFormer">0</label>
+            </div> 
+            <div class="addPowerUp">
+                    <button class="buttonPowerUp" id="coffee" disabled="true">Coffee Machine</button>
+                    <label class="infoPowerUp" id="infoCoffee">Productivity x2</label>
+                    <label class="pricePowerUp" id="pricecoffee">500$</label>
+                    <label class="counterPowerUp" id="counterCoffee">0</label>
+            </div> 
+            <div class="addPowerUp">
+                    <button class="buttonPowerUp" id="incentive" disabled="true">Incentives</button>
+                    <label class="infoPowerUp" id="infoIncentives">Productivity x10</label>
+                    <label class="pricePowerUp" id="priceIncentives">0$</label>
+                    <label class="counterPowerUp" id="counterIncentives">0</label>
+            </div> 
+            <div class="addPowerUp">
+                    <button class="buttonPowerUp" id="scrum" disabled="true">SCRUM Advice</button>
+                    <label class="infoPowerUp" id="infoSCRUM">Productivity x4</label>
+                    <label class="pricePowerUp" id="priceSCRUM">10,000$</label>
+                    <label class="counterPowerUp" id="counterSCRUM">0</label>
+            </div> 
+            <div class="addPowerUp">
+                    <button class="buttonPowerUp" id="cto" disabled="true">Amazon CTO</button>
+                    <label class="infoPowerUp" id="infoCTO">Productivity x50</label>
+                    <label class="pricePowerUp" id="priceCTO">100,000$</label>
+                    <label class="counterPowerUp" id="counterCTO">0</label>
+            </div> 
+            <div class="addPowerUp">
+                    <button class="buttonPowerUp" id="comercial" disabled="true">Comercial</button>
+                    <label class="infoPowerUp" id="infoComercial">Price per Line x2</label>
+                    <label class="pricePowerUp" id="priceComercial">1,000$</label>
+                    <label class="counterPowerUp" id="counterComercial">0</label>
+            </div>   
+            <div class="addPowerUp">
+                    <button class="buttonPowerUp" id="campaign" disabled="true">Media Campaign</button>
+                    <label class="infoPowerUp" id="infoCampaign">Price per Line x2</label>
+                    <label class="pricePowerUp" id="priceCampaign">2,000$</label>
+                    <label class="counterPowerUp" id="counterCampaign">0</label>
+            </div>   
+            <div class="addPowerUp">
+                    <button class="buttonPowerUp" id="agency" disabled="true">Agency</button>
+                    <label class="infoPowerUp" id="infoAgency">Price per Line x2</label>
+                    <label class="pricePowerUp" id="priceAgency">5,000$</label>
+                    <label class="counterPowerUp" id="counterAgency">0</label>
+            </div>                
+        </div>
+    </div>
+    <div id="upgradeContainer">
+            <p id="title">Upgrades</p>
+            <div class="addUpgrade">
+                        <button class="buttonUpgrade" id="addMinion" disabled="true">Minion</button>
+                        <label class="priceUpgrade" id="priceMinion">10$</label>
+                </div>  
+                <div class="addUpgrade">
+                        <button class="buttonUpgrade" id="addOffice" disabled="true">Extend Office</button>
+                        <label class="priceUpgrade" id="priceOffice">1,000$</label>
+                </div> 
+                <div class="addUpgrade">
+                        <button class="buttonUpgrade" id="addHDD" disabled="true">Add HDD</button>
+                        <label class="priceUpgrade" id="priceHDD">100$</label>
+                </div> 
+    </div>
+    <div id="infoContainer">
+            <p id="title">Enterprise</p>
+            <label class="infoEnterprise" id="LineCapacity">Line Capacity: <label class="counterEnterprise" id="lineCapacity">10000000</label></label>
+            <label class="infoEnterprise" id="Minions">Minions: <label class="counterEnterprise" id="minions">0</label></label>
+            <label class="infoEnterprise" id="MinionCapacity">Minion Capacity: <label class="counterEnterprise" id="minionCapacity">50</label></label>            
+            <label class="infoEnterprise" id="LineCapacity">Line per second: <label class="counterEnterprise" id="lineProduction">0</label></label>   
+        </div>
+    <div id="office">
+        <p id="title">Office</p>
+    </div>
+    <script src="clicker.js"></script>
+</body>
+</html>

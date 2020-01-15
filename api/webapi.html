@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Api Lineas</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Lineas</h2>
+        <p>
+            <button type="button" class="btn btn-success" id="newLine">Crear Nueva Linea</button>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Nombre del servicio
+                    </th>
+                    <th>
+                        Precio
+                    </th>
+                    <th>
+                        Fecha
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="Lines">
+            </tbody>
+        </table>
+    </div>
+    <script type="module" src="crudApi.js"></script>
+    <script type="module" src="fetchPetitions.js"></script>
+    <script type="module" src="webapi.js"></script>
+</body>
+
+</html>

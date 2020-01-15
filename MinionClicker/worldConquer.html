@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="worldConquer.css" media="screen" />
+    <title>World Conquer Game</title>
+</head>
+<body>
+        <div id="header">World Conquer Game
+            <div id="optionContainer">
+                <button class="optionButton" id="save">Save</button>
+                <button class="optionButton" id="restart">New Game</button>
+                <button class="optionButton" id="load">Load</button>
+            </div>            
+        </div>
+        <div id="clickerContainer">
+            <button id="clickButton">Plunder</button>
+            <div class="info">
+                Km conquered
+                <p id="lines">1</p>
+            </div>
+            <div class="info">
+                Money
+                <p id="money">1000</p>
+            </div>
+        </div>
+        <div id="powerContainer">  
+                <p id="title">PowerUps</p>
+            <div class="addPowerUp">
+                <button class="buttonPowerUp" id="rifle" disabled="true">Rifles </button>
+                    <label class="infoPowerUp" id="infoRifles">Damage x10</label>
+                    <label class="pricePowerUp" id="priceRifles">0$</label>
+                    <label class="counterPowerUp" id="counterRifles">0</label>
+            </div> 
+            <div class="addPowerUp">
+                <button class="buttonPowerUp" id="minionRecruitment" disabled="true">Recruitment Office </button>
+                    <label class="infoPowerUp" id="infoMinionRecruitment">Minion every 10 sec</label>
+                    <label class="pricePowerUp" id="priceMinionRecruitment">25000$</label>
+                    <label class="counterPowerUp" id="counterMinionRecruitment">0</label>
+            </div> 
+        </div>
+    </div>
+    <div id="upgradeContainer">
+            <p id="title">Upgrade Army</p>
+            <div class="addUpgrade">
+                        <button class="buttonUpgrade" id="addSoldier">Soldier</button>
+                        <label class="priceUpgrade" id="priceSoldier">5,000$</label>
+                </div>  
+                <div class="addUpgrade">
+                        <button class="buttonUpgrade" id="addTank">Tank</button>
+                        <label class="priceUpgrade" id="priceTank">50,000$</label>
+                </div> 
+                <div class="addUpgrade">
+                        <button class="buttonUpgrade" id="addBomb">Bomb</button>
+                        <label class="priceUpgrade" id="priceBomb">100,000$</label>
+                </div> 
+                <div class="addUpgrade">
+                    <button class="buttonUpgrade" id="addNuke" >Nuclear Weapon</button>
+                    <label class="priceUpgrade" id="priceNuke">1,000,000$</label>
+            </div> 
+    </div>
+    <div id="infoContainer">
+            <p id="title">Army</p>
+            <label class="infoEnterprise" id="Soldiers">Soldiers: <label class="counterEnterprise" id="soldiers">0</label></label>
+            <label class="infoEnterprise" id="Tanks">Tanks: <label class="counterEnterprise" id="tanks">0</label></label>
+            <label class="infoEnterprise" id="Bombs">Bombs: <label class="counterEnterprise" id="bombs">0</label></label>
+            <label class="infoEnterprise" id="Nukes">Nuclear Weapons: <label class="counterEnterprise" id="nukes">0</label></label>   
+        </div>
+    <div id="office">
+    </div>
+    <script src="worldConquer.js"></script>
+</body>
+</html>
