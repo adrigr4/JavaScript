@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Poker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .container-bg {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: #cfcfcf;
+        }
+
+        .players {
+            background-color: red;
+        }
+
+        #getPlayers {
+            margin: 10px;
+        }
+
+        .player {
+            margin-top: 10px;
+        }
+
+        .carta {
+            margin: 5px;
+        }
+
+        body {
+            margin: 10px;
+        }
+
+        h6 {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-bg">
+        <div class="container-fluid">
+            <button type="button" class="btn btn-success" id="getPlayers">Obtener jugadores</button>
+            <div class="row">
+                <div class="col text-center" id="player1">
+                </div>
+                <div class="col text-center" id="player2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center" id="player3">
+                </div>
+                <div class="col text-center" id="player4">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("getPlayers").addEventListener("click", getDeck);
+
+        async function getDeck() {
+            await getPlayers();
+            setTimeout(() => {
+                fetch('https://deckofcardsapi.com/api/deck/new/shuffle/')
+                    .then(response => response.json())
+                    .then(data => getCards(data.deck_id))
+            }, 1000);
+        }
+
+        function getPlayers() {
+            randomUser("player1");
+            randomUser("player2");
+            createPlayer("https://robohash.org/juanpablo", "Juan Pablo", "player3");
+            createPlayer("https://api.adorable.io/avatars/200/player4.png", "Player 4", "player4");
+        }
+
+        function randomUser(destino) {
+            fetch('https://randomuser.me/api')
+                .then(response => response.json())
+                .then(data => createPlayer(data.results[0].picture.large, data.results[0].name.first + " " + data.results[0].name.last, destino))
+        }
+
+        async function getCards(id) {
+            for (let player = 1; player <= 5; player++)
+                for (let i = 1; i <= 4; i++) {
+                    fetch('https://deckofcardsapi.com/api/deck/' + id + '/draw/')
+                        .then(response => response.json())
+                        .then(data => drawCard(data.cards[0].image, "player" + i))
+                }
+        }
+
+        function drawCard(img, pl) {
+            let p = document.getElementById(pl);
+            p.innerHTML += '<img src="' + img + '" class="pull-right" style="width:17%">';
+        }
+
+        function createPlayer(img, name, destino) {
+            let player = document.getElementById(destino);
+            player.innerHTML = "";
+            let cad = '<div class="player" style="width:50%"><img class="player-img-top" src="' + img + ' "class="Card Image" style="width:30%" display="block">';
+            cad += '<h6>' + name + '</h6>';
+            player.innerHTML += cad;
+        }
+    </script>
+</body>
+
+</html>
